@@ -5,7 +5,9 @@ class Counter extends Component {
     count: 0
   };
 
-  handleIncrement = () => {
+  handleIncrement = product => {
+    console.log("product", product);
+    // tells the component of react qthat this state is going to change
     this.setState({ count: this.state.count + 1 });
   };
 
@@ -14,7 +16,7 @@ class Counter extends Component {
       <div>
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
         <button
-          onClick={this.handleIncrement}
+          onClick={() => this.handleIncrement(this.product)}
           className="btn btn-secondary btn-sm"
         >
           Increment
@@ -28,6 +30,7 @@ class Counter extends Component {
     classes += this.state.count === 0 ? "warning" : "primary";
     return classes;
   }
+
   formatCount() {
     const { count } = this.state;
     return count === 0 ? "Zero" : count;
