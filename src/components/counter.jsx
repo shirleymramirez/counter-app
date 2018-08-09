@@ -6,7 +6,6 @@ class Counter extends Component {
   };
 
   handleIncrement = product => {
-    console.log("product", product);
     // tells the component of react qthat this state is going to change
     this.setState({ value: this.state.value + 1 });
   };
@@ -14,6 +13,7 @@ class Counter extends Component {
   render() {
     return (
       <div>
+        <h4>{this.props.id}</h4>
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
         <button
           onClick={() => this.handleIncrement(this.product)}
