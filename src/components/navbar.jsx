@@ -1,17 +1,17 @@
-import React, { Component } from "react";
+import React from "react";
 
 // Stateless Functional Component
-const NavBar = props => {
+const NavBar = ({ totalCounters }) => {
   return (
     <nav class="navbar navbar-light bg-light">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand">
         Navbar{" "}
         <span className="badge badge-pill badge-secondary">
-          {props.totalCounters}
+          {totalCounters}
         </span>
       </a>
     </nav>
   );
 };
 
-export default Navbar;
+export default NavBar;
